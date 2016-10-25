@@ -2,7 +2,13 @@
 #include <stdlib.h>
 #include "array.h"
 
-int insert_list(pNode *root,Elemtype new_value)
+struct Node
+{
+    struct Node*    next;
+    ElementType     value;
+};
+
+int insert_list(List root, ElementType new_value)
 {
     pNode current;
     pNode new_node;
@@ -32,18 +38,16 @@ int insert_list(pNode *root,Elemtype new_value)
     return TRUE;
 }
 
-void init_list(pNode *root, Elemtype value)
+void init_list(List root, ElementType value)
 {
-    pNode init_node;
-    init_node = *root;
-    init_node->next=NULL;
-    init_node->value=value;
+    root->next=NULL;
+    root->value=value;
 }
 
-pNode search_list(pNode *root,Elemtype value)
+Position search_list(List root, ElementType value)
 {
     pNode current;
-    current = *root;
+    current = root;
     while(current != NULL )
     {
         if (current->value == value)
