@@ -1,6 +1,5 @@
 # Collect4Learn-dev
 我用来学习的库
-Simple test for cache
 
 ## 列表
 
